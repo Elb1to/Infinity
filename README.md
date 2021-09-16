@@ -2,7 +2,7 @@
 Feature-rich Reducer plugin made by Elb1to in Frozed Club Development.
 
 ## Disclaimer
-This is a work-in-progress, for that reason, a lot of features and essential parts of Lunar's SoupPvP might be missing or incomplete.
+This is a work-in-progress, for that reason, a lot of features and essential parts might be missing or incomplete.
 
 ### Usage terms:
   * You cannot claim that this was all made from scratch by you.
