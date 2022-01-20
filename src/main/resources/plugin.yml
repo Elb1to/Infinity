@@ -5,3 +5,6 @@ authors:
   - Lucanius
   - Elb1to
 website: https://store.frozed.club
+depend:
+  - Citizens
+  - FastAsyncWorldEdit

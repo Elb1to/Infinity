@@ -2,6 +2,7 @@ package me.lucanius.infinity;
 
 import lombok.Getter;
 import me.lucanius.infinity.listeners.PlayerListener;
+import me.lucanius.infinity.managers.MongoManager;
 import me.lucanius.infinity.providers.ScoreboardProvider;
 import me.lucanius.infinity.utils.CC;
 import me.lucanius.infinity.utils.ConfigFile;
@@ -28,6 +29,7 @@ public final class Infinity extends JavaPlugin {
 
     private Assemble scoreboard;
 
+    private MongoManager mongoManager;
     private CommandManager commandManager;
 
     @Override
@@ -43,8 +45,8 @@ public final class Infinity extends JavaPlugin {
         this.getServer().getConsoleSender().sendMessage(Messages.CHAT_BAR.toString());
 
         this.loadManagers();
-        this.loadListeners();
         this.loadProviders();
+        this.loadListeners();
 
         try {
             this.commandManager.loadCommands();
@@ -55,7 +57,18 @@ public final class Infinity extends JavaPlugin {
 
     @Override
     public void onDisable() {
+        this.mongoManager.disconnect();
+    }
 
+    private void loadManagers() {
+        this.mongoManager = new MongoManager(this);
+        this.commandManager = new CommandManager(this);
+    }
+
+    private void loadListeners() {
+        Arrays.asList(
+                new PlayerListener(this, this.scoreboard)
+        ).forEach(listener -> this.getServer().getPluginManager().registerEvents(listener, this));
     }
 
     private void loadConfigs() {
@@ -84,16 +97,6 @@ public final class Infinity extends JavaPlugin {
         });
 
         this.messagesConfig.save();
-    }
-
-    private void loadManagers() {
-        this.commandManager = new CommandManager(this);
-    }
-
-    private void loadListeners() {
-        Arrays.asList(
-                new PlayerListener(this, this.scoreboard)
-        ).forEach(listener -> this.getServer().getPluginManager().registerEvents(listener, this));
     }
 
     private void loadProviders() {
