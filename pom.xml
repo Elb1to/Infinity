@@ -4,11 +4,12 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>me.elb1to</groupId>
+    <groupId>me.lucanius</groupId>
     <artifactId>Infinity</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0</version>
 
     <developers>
+
         <developer>
             <id>elb1to</id>
             <name>Victor Abrego</name>
@@ -22,6 +23,18 @@
             </roles>
             <timezone>America/Panama</timezone>
         </developer>
+
+        <developer>
+            <id>lucanius</id>
+            <name>Lucanius</name>
+            <organization>Frozed Club Development</organization>
+            <organizationUrl>https://frozed.club</organizationUrl>
+            <roles>
+                <role>developer</role>
+            </roles>
+            <timezone>The Netherlands/Europe</timezone>
+        </developer>
+
     </developers>
 
     <organization>
@@ -36,7 +49,9 @@
     </properties>
 
     <dependencies>
-        <dependency> <!-- PaperSpigot -->
+
+        <!-- PaperSpigot -->
+        <dependency>
             <groupId>org.papermc</groupId>
             <artifactId>PaperSpigot</artifactId>
             <version>1.8.8-R0.1-SNAPSHOT</version>
@@ -44,27 +59,31 @@
             <scope>system</scope>
         </dependency>
 
-        <dependency> <!-- Citizens 2.0.16-Beta N1 -->
+        <!-- Citizens 2.0.29 -->
+        <dependency>
             <groupId>net.citizensnpcs</groupId>
             <artifactId>Citizens</artifactId>
-            <version>2.0.16-Beta</version>
-            <systemPath>${project.basedir}/libs/Citizens-2.0.16.jar</systemPath>
+            <version>2.0.29</version>
+            <systemPath>${project.basedir}/libs/Citizens-2.0.29.jar</systemPath>
             <scope>system</scope>
         </dependency>
 
-        <dependency> <!-- Lombok -->
+        <!-- Lombok -->
+        <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.12</version>
+            <version>1.18.22</version>
             <scope>provided</scope>
         </dependency>
 
-        <dependency> <!-- MongoDB Java Driver -->
+        <!-- MongoDb -->
+        <dependency>
             <groupId>org.mongodb</groupId>
             <artifactId>mongo-java-driver</artifactId>
-            <version>3.10.2</version>
+            <version>3.12.10</version>
             <scope>compile</scope>
         </dependency>
+
     </dependencies>
 
     <build>

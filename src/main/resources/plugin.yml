@@ -1,0 +1,7 @@
+name: Infinity
+version: '${project.version}'
+main: me.lucanius.infinity.Infinity
+authors:
+  - Lucanius
+  - Elb1to
+website: https://store.frozed.club
