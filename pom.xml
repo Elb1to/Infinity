@@ -51,6 +51,11 @@
             <id>fawe-repo</id>
             <url>https://ci.athion.net/job/FastAsyncWorldEdit/ws/mvn/</url>
         </repository>
+
+        <repository>
+            <id>dmulloy2-repo</id>
+            <url>https://repo.dmulloy2.net/repository/public/</url>
+        </repository>
     </repositories>
 
     <dependencies>
@@ -103,6 +108,14 @@
             <version>latest</version>
             <scope>provided</scope>
         </dependency>
+
+        <!-- ProtocolLib -->
+        <dependency>
+            <groupId>com.comphenix.protocol</groupId>
+            <artifactId>ProtocolLib</artifactId>
+            <version>4.7.0</version>
+            <scope>compile</scope>
+        </dependency>
     </dependencies>
 
     <build>
@@ -117,6 +130,18 @@
                         <goals>
                             <goal>shade</goal>
                         </goals>
+                        <configuration>
+                            <relocations>
+                                <relocation>
+                                    <patter>com.mongodb</patter>
+                                    <shadedPattern>me.lucanius.infinity.utils.shade.mongo</shadedPattern>
+                                </relocation>
+                                <relocation>
+                                    <patter>com.comphenix.protocol</patter>
+                                    <shadedPattern>me.lucanius.infinity.utils.shade.protocol</shadedPattern>
+                                </relocation>
+                            </relocations>
+                        </configuration>
                     </execution>
                 </executions>
             </plugin>
