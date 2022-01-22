@@ -1,0 +1,45 @@
+ARENAS:
+  LINE:
+    SCHEMATIC: Line.schematic
+    NPC-SPAWN-BLOCK: SEA_LANTERN
+    OFFSET:
+      X: 0
+      Y: 0
+      Z: 4
+      YAW: 0
+      PITCH: O
+      SUBTRACT: true
+    MENU-SLOT: 11
+    DISPLAY-NAME: "Line"
+    DISPLAY-ITEM:
+      MATERIAL: QUARTZ_BLOCK
+      DATA: 0
+      NAME: "&bLine"
+      LORE:
+        - " "
+        - "&7The default 'Line' arena!"
+        - " "
+        - "&aClick to switch arena!"
+    PERMISSION: ""
+  ADVANCED:
+    SCHEMATIC: Advanced.schematic
+    NPC-SPAWN-BLOCK: SEA_LANTERN
+    OFFSET:
+      X: 0
+      Y: 0
+      Z: 2
+      YAW: 0
+      PITCH: O
+      SUBTRACT: true
+    MENU-SLOT: 15
+    DISPLAY-NAME: "Advanced"
+    DISPLAY-ITEM:
+      MATERIAL: SEA_LANTERN
+      DATA: 0
+      NAME: "&bAdvanced"
+      LORE:
+        - " "
+        - "&7The more advanced 'Advanced' arena!"
+        - " "
+        - "&aClick to switch arena!"
+    PERMISSION: "infinity.advancedarena"

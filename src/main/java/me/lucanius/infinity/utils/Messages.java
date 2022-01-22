@@ -16,8 +16,13 @@ import java.util.List;
 public enum Messages {
 
     NO_PERMISSION("NO-PERMS", "&cNo permission.", null),
-    SCOREBOARD_BAR("SCOREBOARD-BAR", "&7&m-&3&m*&7&m------------------&3&m*&7&m-", null),
-    CHAT_BAR("CHAT-BAR", "&7&m-&3&m*&7&m----------------------------------------&3&m*&7&m-", null);
+    SCOREBOARD_BAR("SCOREBOARD-BAR", "&7&m-*------------------*-", null),
+    CHAT_BAR("CHAT-BAR", "&7&m-&3&m*&7&m----------------------------------------&3&m*&7&m-", null),
+    NEED_RANK("NEED-RANK", "&cYou need a rank to use this feature! Store: &c&lstore.frozed.club", null),
+    CANCELLED("CANCELLED", "&aSuccessfully cancelled event!", null),
+    CHANGE_NAME_SUCCESSFULL("CHANGE-NAME-SUCCESSFULL", "&aSuccessfully set your npc name to <name>!", null),
+    CHANGE_SKIN_SUCCESSFULL("CHANGE-SKIN-SUCCESSFULL", "&aSuccessfully set your npc skin to <skin>!", null),
+    ALREADY_USING("ALREADY-USING", "&cYou are already using this <object>!", null);
 
     @Setter private static ConfigFile configFile;
     private final String path;

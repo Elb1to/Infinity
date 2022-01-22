@@ -15,13 +15,13 @@ import org.bukkit.command.CommandSender;
  */
 public class ReducerCommand extends InfinityCommand {
 
-    @Override @Command(name = "infinity", aliases = {"lucanius", "elb1to"}, inGameOnly = false)
+    @Override @Command(name = "infinity", aliases = {"reducer", "lucanius", "elb1to"}, inGameOnly = false)
     public void onCommand(CommandArgs command) {
         CommandSender sender = command.getSender();
 
         sender.sendMessage(Messages.CHAT_BAR.toString());
         sender.sendMessage(CC.translate("&b&lInfinity&r &7- &a" + this.plugin.getDescription().getVersion()));
-        sender.sendMessage(CC.translate("&7* &bAuthors: &f" + StringUtils.join(this.plugin.getDescription().getAuthors(), "&7, &f")));
+        sender.sendMessage(CC.translate("&7* &fAuthors: &b" + StringUtils.join(this.plugin.getDescription().getAuthors(), "&7, &b")));
         sender.sendMessage(CC.translate("&7* &fGitHub: &bhttps://github.com/FrozedClubDevelopment/Infinity"));
         sender.sendMessage(Messages.CHAT_BAR.toString());
     }

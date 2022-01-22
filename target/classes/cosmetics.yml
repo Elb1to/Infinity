@@ -1,0 +1,88 @@
+BLOCKS:
+  SANDSTONE:
+    DISPLAY-NAME: "Sandstone"
+    USEABLE-ITEM:
+      MATERIAL: SANDSTONE
+      DATA: 0
+    DISPLAY-ITEM:
+      MATERIAL: SANDSTONE
+      DATA: 0
+      NAME: "&bSandstone"
+      LORE:
+        - " "
+        - "&aClick to change your block!"
+    PERMISSION: ""
+  DIAMONDBLOCK:
+    DISPLAY-NAME: "Diamond Block"
+    USEABLE-ITEM:
+      MATERIAL: DIAMOND_BLOCK
+      DATA: 0
+    DISPLAY-ITEM:
+      MATERIAL: DIAMOND_BLOCK
+      DATA: 0
+      NAME: "&bDiamond Block"
+      LORE:
+        - " "
+        - "&aClick to change your block!"
+    PERMISSION: "infinity.diamondblockblock"
+MELEES:
+  STICK:
+    DISPLAY-NAME: "Stick"
+    USEABLE-ITEM:
+      MATERIAL: STICK
+      DATA: 0
+    DISPLAY-ITEM:
+      MATERIAL: STICK
+      DATA: 0
+      NAME: "&bStick"
+      LORE:
+        - " "
+        - "&aClick to change your melee!"
+    PERMISSION: ""
+  BLAZEROD:
+    DISPLAY-NAME: "Blaze Rod"
+    USEABLE-ITEM:
+      MATERIAL: BLAZE_ROD
+      DATA: 0
+    DISPLAY-ITEM:
+      MATERIAL: BLAZE_ROD
+      DATA: 0
+      NAME: "&bBlaze Rod"
+      LORE:
+        - " "
+        - "&aClick to change your melee!"
+    PERMISSION: "infinity.blazerodmelee"
+DIFFICULTIES:
+  EASY:
+    DISPLAY-NAME: "Easy"
+    DISPLAY-ITEM:
+      MATERIAL: STAINED_GLASS
+      DATA: 5
+      NAME: "&a&lEasy"
+      LORE: []
+    MENU-SLOT: 11
+    HORIZONTAL: 0.600
+    VERTICAL: 0.365
+    PERMISSION: ""
+  MEDIUM:
+    DISPLAY-NAME: "Medium"
+    DISPLAY-ITEM:
+      MATERIAL: STAINED_GLASS
+      DATA: 1
+      NAME: "&6&lMedium"
+      LORE: []
+    MENU-SLOT: 13
+    HORIZONTAL: 0.800
+    VERTICAL: 0.365
+    PERMISSION: "infinity.mediumdifficulty"
+  HARD:
+    DISPLAY-NAME: "Hard"
+    DISPLAY-ITEM:
+      MATERIAL: STAINED_GLASS
+      DATA: 14
+      NAME: "&c&lHard"
+      LORE: []
+    MENU-SLOT: 15
+    HORIZONTAL: 1.000
+    VERTICAL: 0.365
+    PERMISSION: "infinity.harddifficulty"

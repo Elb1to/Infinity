@@ -1,0 +1,12 @@
+TITLE: "&b&lInfinity"
+LINES:
+  - "<scoreboard-bar>"
+  - "&fPersonal Best: &b<highest-time>"
+  - "&fDifficulty: &b<difficulty>"
+  - " "
+  - "&fCurrent Time: &b<current-time>"
+  - "&fCurrent Blocks: &b<block-count>"
+  - "&fCurrent Hits: &b<current-hits>"
+  - " "
+  - "&blucanius.me"
+  - "<scoreboard-bar>"

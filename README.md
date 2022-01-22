@@ -10,5 +10,17 @@ This is a work-in-progress, for that reason, a lot of features and essential par
   * You can only use this for private and personal use, not commercial use.
   * If you use this, you have to credit [Elb1to](https://github.com/Elb1to) & [Lucanius](https://github.com/Lucanius69), as well as linking this repository.
 
+### Dependencies:
+  * Citizens
+  * FastAsyncWorldEdit
+  * ProtocolLib
 
-[Infinity](https://github.com/Elb1to/Infinity) © 2022 by [Elb1to](https://github.com/Elb1to) & [Lucanius](https://github.com/Lucanius69) is licensed under [CC BY-NC 4.0](http://creativecommons.org/licenses/by-nc/4.0/?ref=chooser-v1)
+### Permissions:
+  * infinity.changename
+  * infinity.changeskin
+  * infinity.changedifficulty
+  * infinity.changearena
+  * infinity.changemelee
+  * infinity.changeblock
+
+[Infinity](https://github.com/FrozedClubDevelopment/Infinity) © 2022 by [Elb1to](https://github.com/Elb1to) & [Lucanius](https://github.com/Lucanius69) is licensed under [CC BY-NC 4.0](http://creativecommons.org/licenses/by-nc/4.0/?ref=chooser-v1)

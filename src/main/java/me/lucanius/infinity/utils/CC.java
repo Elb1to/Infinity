@@ -12,18 +12,21 @@ import java.util.List;
  */
 public class CC {
 
+    public static String scoreboardBar = ChatColor.translateAlternateColorCodes('&', "&7&m-*------------------*-");
+    public static String chatBar = ChatColor.translateAlternateColorCodes('&', "&7&m-&3&m*&7&m----------------------------------------&3&m*&7&m-");
+
     public static String translate(String message) {
         return ChatColor.translateAlternateColorCodes('&', message)
-                .replace("<chat-bar>", Messages.CHAT_BAR.toString())
-                .replace("<scoreboard-bar>", Messages.SCOREBOARD_BAR.toString());
+                .replace("<chat-bar>", chatBar)
+                .replace("<scoreboard-bar>", scoreboardBar);
     }
 
     public static List<String> translate(List<String> lines) {
         List<String> strings = new ArrayList<>();
         for (String line : lines) {
             strings.add(ChatColor.translateAlternateColorCodes('&', line)
-                    .replace("<chat-bar>", Messages.CHAT_BAR.toString())
-                    .replace("<scoreboard-bar>", Messages.SCOREBOARD_BAR.toString())
+                    .replace("<chat-bar>", chatBar)
+                    .replace("<scoreboard-bar>", scoreboardBar)
             );
         }
 
@@ -35,8 +38,8 @@ public class CC {
         for (String line : lines) {
             if (line != null) {
                 strings.add(ChatColor.translateAlternateColorCodes('&', line)
-                        .replace("<chat-bar>", Messages.CHAT_BAR.toString())
-                        .replace("<scoreboard-bar>", Messages.SCOREBOARD_BAR.toString())
+                        .replace("<chat-bar>", chatBar)
+                        .replace("<scoreboard-bar>", scoreboardBar)
                 );
             }
         }

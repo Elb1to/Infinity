@@ -13,6 +13,7 @@ public abstract class InfinityCommand {
 
 	public InfinityCommand() {
 		this.plugin = Infinity.getInstance();
+		this.plugin.getCommandManager().registerCommands(this, null);
 	}
 
 	public abstract void onCommand(CommandArgs command);

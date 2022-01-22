@@ -7,6 +7,7 @@
     <groupId>me.lucanius</groupId>
     <artifactId>Infinity</artifactId>
     <version>1.0</version>
+    <packaging>jar</packaging>
 
     <developers>
         <developer>
@@ -68,7 +69,7 @@
             <scope>system</scope>
         </dependency>
 
-        <!-- Citizens 2.0.29 -->
+        <!-- Citizens -->
         <dependency>
             <groupId>net.citizensnpcs</groupId>
             <artifactId>Citizens</artifactId>
@@ -114,7 +115,7 @@
             <groupId>com.comphenix.protocol</groupId>
             <artifactId>ProtocolLib</artifactId>
             <version>4.7.0</version>
-            <scope>compile</scope>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 
@@ -130,18 +131,6 @@
                         <goals>
                             <goal>shade</goal>
                         </goals>
-                        <configuration>
-                            <relocations>
-                                <relocation>
-                                    <patter>com.mongodb</patter>
-                                    <shadedPattern>me.lucanius.infinity.utils.shade.mongo</shadedPattern>
-                                </relocation>
-                                <relocation>
-                                    <patter>com.comphenix.protocol</patter>
-                                    <shadedPattern>me.lucanius.infinity.utils.shade.protocol</shadedPattern>
-                                </relocation>
-                            </relocations>
-                        </configuration>
                     </execution>
                 </executions>
             </plugin>

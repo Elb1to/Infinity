@@ -1,0 +1,82 @@
+package me.lucanius.infinity.utils.scoreboard;
+
+import lombok.Getter;
+import me.lucanius.infinity.Infinity;
+import me.lucanius.infinity.utils.CC;
+import me.lucanius.infinity.utils.Utils;
+import org.bukkit.entity.Player;
+import org.bukkit.scoreboard.Objective;
+import org.bukkit.scoreboard.Scoreboard;
+
+import java.util.*;
+
+/**
+ * Created by: ThatKawaiiSam
+ * Project: Assemble
+ */
+@Getter
+public class BoardManager {
+
+	private final Infinity plugin;
+	private final BoardAdapter adapter;
+	private final Map<UUID, Board> boardMap;
+
+	public BoardManager(Infinity plugin, BoardAdapter adapter, int updateTick) {
+		this.plugin = plugin;
+		this.adapter = adapter;
+		this.boardMap = new HashMap<>();
+
+		Utils.runTimerAsync(plugin, this::sendScoreboard, 0, updateTick);
+	}
+
+	public void sendScoreboard() {
+		for (Player player : Utils.getOnlinePlayers()) {
+			Board board = this.boardMap.get(player.getUniqueId());
+			if (board != null) {
+				Scoreboard scoreboard = board.getScoreboard();
+				Objective objective = board.getObjective();
+				String title = CC.translate(this.adapter.getTitle(player));
+				if (!objective.getDisplayName().equals(title)) {
+					objective.setDisplayName(title);
+				}
+
+				List<String> lines = this.adapter.getLines(player);
+				if (lines == null || lines.isEmpty()) {
+					board.getEntries().forEach(BoardEntry::quit);
+					board.getEntries().clear();
+				} else {
+					if (!this.adapter.getBoardStyle(player).isDescending()) {
+						Collections.reverse(lines);
+					}
+					if (board.getEntries().size() > lines.size()) {
+						for (int j = lines.size(); j < board.getEntries().size(); j++) {
+							BoardEntry entry = board.getEntryAtPosition(j);
+							if (entry != null) {
+								entry.quit();
+							}
+						}
+					}
+
+					int cache = this.adapter.getBoardStyle(player).getStart();
+					for (int i = 0; i < lines.size(); i++) {
+						BoardEntry entry = board.getEntryAtPosition(i);
+						String line = CC.translate(lines.get(i));
+						if (entry == null) {
+							entry = new BoardEntry(board, line);
+						}
+
+						entry.setText(line);
+						entry.setUp();
+						entry.send(this.adapter.getBoardStyle(player).isDescending() ? cache-- : cache++);
+					}
+				}
+
+				if (player.getScoreboard() == scoreboard) {
+					continue;
+				}
+
+				player.setScoreboard(scoreboard);
+			}
+		}
+	}
+}
